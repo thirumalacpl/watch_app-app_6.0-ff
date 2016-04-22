@@ -81,6 +81,8 @@ else if(ppassword !== reppassword ){
 });
 
  $(document).off('click', '#sescan').on('click', '#sescan', function() { 
+         document.getElementById('ppassword').value = "";
+document.getElementById('reppassword').value = "";
  sessionStorage.clear(); 
   $.mobile.changePage($('#pageone'), { transition: "none", changeHash: true, reverse: false });
 
