@@ -26,6 +26,12 @@ if(sessionStorage.getItem("logged_in")=="2"){
 
 
 $(document).off('click', '#submit').on('click', '#submit', function() { 
+    var enteruser=document.getElementById('username').value;
+    var enterpass=document.getElementById('password').value;
+    //alert(enteruser+'enteruser'+enterpass+'enterpass');
+    if(enteruser == "" && enterpass == "" ){
+      alert('Enter Valid Username & Password');
+    }else{
     if($('#username').val().length > 0 && $('#password').val().length > 0){
         console.log($('#check-watchuser').serialize());
         $.ajax({url: 'http://fourthforce.in/verify/slim/slim_four_ripsss/index.php',
@@ -144,6 +150,7 @@ alert('Network error has occurred please try again!');
 }); 
  
   
+}
 }
 });
 
